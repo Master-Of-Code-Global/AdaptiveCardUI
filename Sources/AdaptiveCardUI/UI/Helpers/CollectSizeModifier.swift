@@ -38,11 +38,11 @@
 
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     extension View {
-        func collectSize<Tag: Hashable>(tag: Tag) -> some View {
+        public func collectSize<Tag: Hashable>(tag: Tag) -> some View {
             modifier(CollectSizeModifier(tag))
         }
 
-        func onCollectedSizesChange<Tag: Hashable>(perform action: @escaping ([Tag: CGSize]) -> Void) -> some View {
+        public func onCollectedSizesChange<Tag: Hashable>(perform action: @escaping ([Tag: CGSize]) -> Void) -> some View {
             onPreferenceChange(CollectSizePreference<Tag>.self, perform: action)
         }
     }

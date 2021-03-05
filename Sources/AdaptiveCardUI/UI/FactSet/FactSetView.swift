@@ -44,16 +44,18 @@
         }
 
         private func computeTitleWidth(sizes: [FactRow: CGSize]) {
-            var maxWidth: CGFloat = 0
+            DispatchQueue.main.async {
+                var maxWidth: CGFloat = 0
 
-            for key in factSet.facts.indices.map(FactRow.init) {
-                let width = sizes[key]?.width ?? 0
-                if width > maxWidth {
-                    maxWidth = width
+                for key in factSet.facts.indices.map(FactRow.init) {
+                    let width = sizes[key]?.width ?? 0
+                    if width > maxWidth {
+                        maxWidth = width
+                    }
                 }
-            }
 
-            titleWidth = maxWidth
+                titleWidth = maxWidth
+            }
         }
     }
 

@@ -27,7 +27,9 @@
             }
             .frame(height: height)
             .onCollectedSizesChange { collectedSizes in
-                imageSizes = collectedSizes
+                DispatchQueue.main.async {
+                    imageSizes = collectedSizes
+                }
             }
             .onPreferenceChange(ContentSizeKey.self) { contentSize in
                 height = contentSize?.height

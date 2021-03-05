@@ -49,8 +49,10 @@
                     .padding(paddedItem.edges, paddedItem.length)
                 }
             }
-            .onCollectedSizesChange {
-                computeColumnLayout(width: proposedSize.width, collectedSizes: $0)
+            .onCollectedSizesChange { sizes in
+                DispatchQueue.main.async {
+                    computeColumnLayout(width: proposedSize.width, collectedSizes: sizes)
+                }
             }
         }
     }
