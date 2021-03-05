@@ -49,7 +49,7 @@
             case let .fallbackText(text):
                 ErrorView(text: text)
             case .failed:
-                ErrorView(text: NSLocalizedString("Error.render", bundle: .module, comment: ""))
+                ErrorView(text: NSLocalizedString("Error.render", bundle: adaptiveCardBundle, comment: ""))
             }
         }
     }
