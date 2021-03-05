@@ -2,3 +2,4 @@ This is a fork of *AdaptiveCardUI* (https://github.com/gonzalezreal/AdaptiveCard
 * Fix cards height if several cards added to ScrollView
 * Fix height for multiple images in a card
 * Make CollectSizeModifier functions public
+* Fix SwiftUI preview
